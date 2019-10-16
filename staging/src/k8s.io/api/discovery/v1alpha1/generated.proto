@@ -104,6 +104,11 @@ message EndpointPort {
   // If this is not specified, ports are not restricted and must be
   // interpreted in the context of the specific consumer.
   optional int32 port = 3;
+
+  // The application protocol for this port.
+  // The format must follow standard label syntax. For example, http or mysql.
+  // Default is empty string.
+  optional string appProtocol = 4;
 }
 
 // EndpointSlice represents a subset of the endpoints that implement a service.

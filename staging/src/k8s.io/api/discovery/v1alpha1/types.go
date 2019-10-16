@@ -128,6 +128,10 @@ type EndpointPort struct {
 	// If this is not specified, ports are not restricted and must be
 	// interpreted in the context of the specific consumer.
 	Port *int32 `json:"port,omitempty" protobuf:"bytes,3,opt,name=port"`
+	// The application protocol for this port.
+	// The format must follow standard label syntax. For example, http or mysql.
+	// Default is empty string.
+	AppProtocol *string `json:"appProtocol,omitempty" protobuf:"bytes,4,name=appProtocol"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
